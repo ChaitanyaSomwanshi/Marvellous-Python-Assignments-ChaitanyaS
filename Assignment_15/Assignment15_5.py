@@ -18,11 +18,24 @@ def main():
 
     FR = FO.read()
 
-    if "Marvellous"  in FR:
-        print("true")
+    FR1 = FR.split()
 
-    else:
-        print("false")
+    SearchWord = "Marvellous"
+
+    count = 0
+
+    for i in FR1:
+        if i == SearchWord:
+            count = count + 1
+
+
+    print(count)
+
+    # if "Marvellous"  in FR:
+    #     print("true")
+
+    # else:
+    #     print("false")
 
     FO.close()
 
