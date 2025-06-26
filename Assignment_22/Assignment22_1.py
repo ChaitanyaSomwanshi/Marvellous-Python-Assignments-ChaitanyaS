@@ -1,0 +1,25 @@
+'''
+1. Design automation script which display information of running processes as its name, PID, username.
+
+Usage : ProcInfo.py
+
+'''
+
+import psutil
+
+
+def main():
+
+    listprocess = []
+
+    for proc in psutil.process_iter():
+        info = proc.as_dict(attrs = ['name','pid','username'])
+        info['vms'] = proc.memory_info().vms / (1024 * 1024)
+        listprocess.append(info)
+    
+
+    print(listprocess)
+
+
+if __name__ == "__main__":
+    main()
